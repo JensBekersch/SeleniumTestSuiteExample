@@ -10,5 +10,6 @@ public interface ReaderInterface {
     }
 
     String getBaseUrl();
+    Long getStandardWaitTime();
 
 }

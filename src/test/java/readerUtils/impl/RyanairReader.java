@@ -34,4 +34,14 @@ public class RyanairReader extends AbstractReader implements RyanairReaderInterf
 
         return property.replaceAll("\\{text}", text);
     }
+
+    @Override
+    public String getAcceptAllCookiesButton() {
+        return properties.getProperty("acceptAllCookiesButton");
+    }
+
+    @Override
+    public String getDepartureContextMenuCologne() {
+        return properties.getProperty("departureContextMenuCologne");
+    }
 }

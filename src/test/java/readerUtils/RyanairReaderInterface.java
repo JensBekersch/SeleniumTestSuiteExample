@@ -13,4 +13,6 @@ public interface RyanairReaderInterface {
     String getInputFieldDestination();
     String getSearchButton();
     String getText(String text);
+    String getAcceptAllCookiesButton();
+    String getDepartureContextMenuCologne();
 }

@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import exceptions.PropertyReaderException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -27,9 +29,17 @@ public class StartPageStepDefinitions {
         open(this.reader.getBaseUrl());
     }
 
-    @When("the passenger selects {string} as depature")
-    public void thePassengerSelectsDeparture(String departure) {
-        $(By.xpath(this.ryanairReader.getInputFieldDeparture())).sendKeys(departure);
+    @When("the passenger accept all cookies")
+    public void thePassengerAcceptAllCookies() {
+        $(By.xpath(this.ryanairReader.getAcceptAllCookiesButton())).click();
+    }
+
+    @When("the passenger selects Cologne as departure")
+    public void thePassengerSelectsDeparture() {
+        Selenide.sleep(this.reader.getStandardWaitTime());
+        $(By.xpath(this.ryanairReader.getInputFieldDeparture())).click();
+
+        $(By.xpath(this.ryanairReader.getDepartureContextMenuCologne())).click();
     }
 
     @When("the passenger selects {string} as destination")

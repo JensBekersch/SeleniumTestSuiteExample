@@ -17,4 +17,9 @@ public class Reader extends AbstractReader implements ReaderInterface {
         return properties.getProperty("baseUrl");
     }
 
+    @Override
+    public Long getStandardWaitTime() {
+        return Long.parseLong(properties.getProperty("standardWaitTime"));
+    }
+
 }
